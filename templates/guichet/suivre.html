@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>Page de suivi</title>
+  </head>
+  <body>
+    <h1>Bienvenue sur la page de suivi!</h1>
+
+    {% if user.is_authenticated %}
+      <!-- Afficher les informations de l'utilisateur -->
+      <p>Bienvenue, {{ user.cne }}!</p>
+      
+      <!-- Le reste de votre code de suivi ici -->
+    {% else %}
+      <!-- Rediriger vers la page de connexion -->
+      {% url 'login' as login_url %}
+      <p>Veuillez vous <a href="{{ login_url }}">connecter</a> pour accéder à cette page.</p>
+    {% endif %}
+    
+  </body>
+</html>

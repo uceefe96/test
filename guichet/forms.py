@@ -1,9 +1,9 @@
 from django import forms
-from .models import Login
+from .models import Etudiant
 
 
 
 class LoginForm(forms.ModelForm):
     class Meta:
-        model = Login
-        fields = '__all__'
+        model = Etudiant
+        fields = ['cne','cin']
